@@ -1,0 +1,59 @@
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .PostCard {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .PostCard img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .PostCard h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .PostCard p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
