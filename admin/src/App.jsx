@@ -5,8 +5,7 @@ import "./App.css"
 export default function App() {
 
 
-  async function handleSubmit(e)
-  {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     let data = {
@@ -16,13 +15,9 @@ export default function App() {
       author: e.target[3].value,
     }
 
-    let Res = await axios.post("http://localhost:5500/api/post",data);
+    let Res = await axios.post("http://localhost:5500/api/post", data);
     console.log(Res.data);
-
-
-
   }
-
 
   return (
     <div>
@@ -31,20 +26,17 @@ export default function App() {
         <p>Just add The Blogs</p>
       </header>
 
+      <main>
+        <form onSubmit={handleSubmit}>
 
-    <main>
-      <form onSubmit={handleSubmit}>
-
-          <input type="text" name="title" placeholder="Title" required/>
-          <input type="text" name="poster" placeholder="Poster URL" required/>
-          <input type="text" name="desc" placeholder="Description" required/>
-          <input type="text" name="author" placeholder="Author" required/>
+          <input type="text" name="title" placeholder="Title" required />
+          <input type="text" name="poster" placeholder="Poster URL" required />
+          <input type="text" name="desc" placeholder="Description" required />
+          <input type="text" name="author" placeholder="Author" required />
           <button type="submit">Add Blog</button>
-        
-      </form>
-    </main>
 
-
+        </form>
+      </main>
 
     </div>
   )

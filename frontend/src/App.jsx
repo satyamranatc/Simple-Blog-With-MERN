@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import "./App.css"
+import {Link} from "react-router-dom"
+
 
 export default function App() {
   const [data, setData] = useState([]);
@@ -22,18 +24,21 @@ export default function App() {
 
     <main>
 
-    </main>
     {
       data.map((post, index) => (
-        <div className='PostCard' key={index}>
-          <img src={post.poster} alt="" />
-          <h2>{post.title}</h2>
-          <p>{post.desc}</p>
-          <p>{post.author}</p>
-        </div>
+      
+        <a key={index} href = {`/Display/${post._id}`}>
+            <div className='PostCard' >
+              <img src={post.poster} alt="" />
+              <h2>{post.title}</h2>
+              <p>{post.desc}</p>
+              <p>{post.author}</p>
+            </div>
+        </a>
       ))
     }
 
+    </main>
 
 
     </div>

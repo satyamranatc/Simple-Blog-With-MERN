@@ -19,6 +19,12 @@ app.get("/api/post", async(req,res)=>{
     res.json(Data);
 
 })
+app.get("/api/post/:id", async(req,res)=>{
+    let id = req.params.id;
+    let Data = await Post.findById(id);
+    res.json(Data);
+
+})
 
 app.post("/api/post",async (req,res)=>{
     let Data = req.body;
@@ -28,6 +34,27 @@ app.post("/api/post",async (req,res)=>{
         message: "Post added successfully"
     });
 
+})
+app.put("/api/post/:id",async (req,res)=>{
+    let id = req.params.id;
+    let Data = req.body;
+
+    let updatedPost = await Post.findByIdAndUpdate(id,Data,{
+        new: true,
+    });
+    
+    res.json({
+        message: "Post Updated successfully"
+    });
+
+})
+
+app.delete("/api/post/:id",async (req,res)=>{
+    let id = req.params.id;
+    let deletedPost = await Post.findByIdAndDelete(id);
+    res.json({
+        message: "Post deleted successfully"
+    });
 })
 
 
